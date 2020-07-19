@@ -111,10 +111,10 @@ class Car {
         + {name} and {location} of course come from the instance's own properties.
 */
 class Lambdasian {
-  constructor(name, age, location) {
-    this.name = name;
-    this.age = age;
-    this.location = location;
+  constructor(lambdaAttr) {
+    this.name = lambdaAttr.name;
+    this.age = lambdaAttr.age;
+    this.location = lambdaAttr.location;
   }
     speak() {
       return `Hello my name is ${this.name}, I am from ${this.location}`;
@@ -136,11 +136,11 @@ class Lambdasian {
         + `grade` receives a `student` object and a `subject` string as arguments and returns '{student.name} receives a perfect score on {subject}'
 */
 class Instructor extends Lambdasian {
-  constructor(name, age, location, specialty, favLanguage, catchPhrase) {
-    super(name, age, location);
-    this.specialty = specialty;
-    this.favLanguage = favLanguage;
-    this.catchPhrase = catchPhrase;
+  constructor(instructorAttr) {
+    super(instructorAttr);
+    this.specialty = instructorAttr.specialty;
+    this.favLanguage = instructorAttr.favLanguage;
+    this.catchPhrase = instructorAttr.catchPhrase;
   }
 
   demo(subject) {
@@ -168,11 +168,11 @@ class Instructor extends Lambdasian {
         + `sprintChallenge` similar to PRAssignment but returns `student.name has begun sprint challenge on {subject}`
 */
 class Student extends Lambdasian {
-  constructor(name, age, location, previousBackground, className, favSubjects) {
-    super(name, age, location);
-    this.previousBackground = previousBackground;
-    this.className = className;
-    this.favSubjects = favSubjects;
+  constructor(studentAttr) {
+    super(studentAttr);
+    this.previousBackground = studentAttr.previousBackground;
+    this.className = studentAttr.className;
+    this.favSubjects = studentAttr.favSubjects;
   }
 
   listSubjects() {
@@ -206,18 +206,17 @@ class Student extends Lambdasian {
         + `debugsCode` a method that takes in a student object and a subject and returns `{name} debugs {student.name}'s code on {subject}`
 */
 class ProjectManager extends Instructor {
-  constructor(name, age, location,specialty, favLanguage, catchPhrase, gradClassName, favInstructor) {
-    super(name, age, location, specialty, favLanguage, catchPhrase);
-    this.gradClassName = gradClassName;
-    this.favInstructor = favInstructor;
+  constructor(managerAttr) {
+    super(managerAttr);
+    this.gradClassName = managerAttr.gradClassName;
+    this.favInstructor = managerAttr.favInstructor;
   }
-
   standUp(channel) {
     return `${this.name} announces to ${channel}, @channel standy times!`;
   }
 
   debugsCode() {
-    
+
   }
 }
 
