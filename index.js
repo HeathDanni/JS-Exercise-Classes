@@ -176,10 +176,7 @@ class Student extends Lambdasian {
   }
 
   listSubjects() {
-    let str = `Loving `;
-      for (let i = 0; i > this.favSubjects.length-1; i++) {
-        str += `${this.favSubjects[i]}, `;
-      } return str += `${this.favSubjects[this.favSubjects.length-1]}!`
+    return `Loving ${this.favSubjects.join(', ')}!`;
   }
 
   PRAssignment(subject) {
